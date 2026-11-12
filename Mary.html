@@ -1,0 +1,627 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Cumpleaños de Mary</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap">
+<style>
+/* Concepto: cielo nocturno violeta con fuegos artificiales, globos que suben y una carta sobre una tarjeta de vidrio */
+:root {
+  --night: #140a24;
+  --night-2: #2b1250;
+  --rose: #ff5d8f;
+  --coral: #ff8a6b;
+  --gold: #ffd27a;
+  --lilac: #b79cff;
+  --ink: #fff4f8;
+  --muted: #dcc7ea;
+  --card: rgba(34, 15, 60, 0.8);
+  --line: rgba(255, 255, 255, 0.14);
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-script: "Dancing Script", "Brush Script MT", cursive;
+  --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background-color: var(--night);
+  background-image:
+    radial-gradient(120% 70% at 50% -10%, var(--night-2) 0%, rgba(43, 18, 80, 0) 70%),
+    radial-gradient(80% 50% at 100% 100%, rgba(255, 93, 143, 0.16) 0%, rgba(255, 93, 143, 0) 70%);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  min-height: 100vh;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 8px 56px;
+  overflow-x: hidden;
+}
+
+/* Capas de fondo */
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 8% 12%, #fff, transparent),
+    radial-gradient(1px 1px at 22% 30%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 36% 8%, var(--gold), transparent),
+    radial-gradient(1px 1px at 51% 22%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 64% 14%, #fff, transparent),
+    radial-gradient(1px 1px at 78% 34%, var(--lilac), transparent),
+    radial-gradient(1.5px 1.5px at 90% 10%, #fff, transparent),
+    radial-gradient(1px 1px at 15% 58%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 44% 64%, var(--gold), transparent),
+    radial-gradient(1px 1px at 71% 70%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 93% 56%, #fff, transparent),
+    radial-gradient(1px 1px at 30% 88%, #fff, transparent),
+    radial-gradient(1px 1px at 84% 90%, var(--lilac), transparent);
+  opacity: 0.75;
+}
+.sky {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.amb {
+  position: absolute;
+  bottom: -160px;
+  opacity: 0.5;
+  animation: rise linear infinite;
+  will-change: transform;
+}
+.amb svg { display: block; width: 100%; height: auto; }
+@keyframes rise {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(var(--dx, 0px), calc(-100vh - 360px), 0); }
+}
+#fx {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+main {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Portada */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  padding-block: 44px 8px;
+}
+.eyebrow {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.hello {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 6vw, 2.1rem);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+.name {
+  margin: -4px 0 0;
+  font-family: var(--font-script);
+  font-weight: 700;
+  font-size: clamp(5rem, 26vw, 9rem);
+  line-height: 1;
+  padding: 0 0.12em 0.1em;
+  color: var(--rose);
+  background-image: linear-gradient(100deg, var(--rose) 10%, var(--coral) 50%, var(--gold) 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 22px rgba(255, 93, 143, 0.45));
+}
+.age {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 4px;
+}
+.age b {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(3.4rem, 15vw, 5.4rem);
+  line-height: 1;
+  color: var(--gold);
+  text-shadow: 0 0 26px rgba(255, 210, 122, 0.55);
+  font-variant-numeric: lining-nums;
+}
+.age span {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--muted);
+}
+.lede {
+  margin: 6px 0 14px;
+  max-width: 30ch;
+  color: var(--muted);
+  text-wrap: balance;
+}
+
+button { font: inherit; }
+.btn {
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  min-height: 48px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #2a0a1c;
+  background-image: linear-gradient(135deg, var(--rose), var(--coral));
+  box-shadow: 0 10px 28px rgba(255, 93, 143, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(255, 93, 143, 0.45); }
+.btn:active { transform: translateY(0) scale(0.98); }
+.btn.gold {
+  background-image: linear-gradient(135deg, var(--gold), var(--coral));
+  box-shadow: 0 10px 28px rgba(255, 210, 122, 0.3);
+}
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+/* Carta */
+.letter {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: clamp(22px, 6vw, 40px);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 24px 60px rgba(8, 2, 20, 0.5);
+}
+.letter h2 {
+  margin: 0 0 14px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.6rem, 6vw, 2.1rem);
+  line-height: 1.2;
+  color: var(--rose);
+}
+.letter p { margin: 0 0 16px; line-height: 1.75; max-width: 62ch; }
+.letter h3 {
+  margin: 26px 0 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.promises {
+  list-style: none;
+  margin: 0 0 22px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.promises li {
+  position: relative;
+  padding-left: 32px;
+  line-height: 1.55;
+}
+.promises li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3em;
+  width: 20px;
+  height: 18px;
+  background: var(--rose);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 22'%3E%3Cpath d='M12 21.5C5 16 1 12.2 1 7.6 1 4.4 3.5 2 6.5 2c2.1 0 4 1.1 5.5 3C13.500 3.100 15.400 2 17.500 2 20.500 2 23 4.400 23 7.600c0 4.600-4 8.400-11 13.900z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 22'%3E%3Cpath d='M12 21.5C5 16 1 12.2 1 7.6 1 4.4 3.5 2 6.5 2c2.1 0 4 1.1 5.5 3C13.500 3.100 15.400 2 17.500 2 20.500 2 23 4.400 23 7.600c0 4.600-4 8.400-11 13.900z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.sign {
+  margin: 6px 0 0 !important;
+  font-family: var(--font-script);
+  font-weight: 600;
+  font-size: 1.9rem;
+  line-height: 1.2;
+  color: var(--gold);
+}
+
+/* Globos */
+.game {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.game h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+.game p { margin: 0; color: var(--muted); }
+.count {
+  margin-top: 4px;
+  font-weight: 700;
+  color: var(--gold);
+  font-variant-numeric: tabular-nums;
+}
+.field {
+  width: 100%;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(52px, 1fr));
+  gap: 6px 4px;
+}
+.pb {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 2px;
+  cursor: pointer;
+  display: block;
+  min-width: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  animation: bob 3.2s ease-in-out infinite;
+  -webkit-tap-highlight-color: transparent;
+}
+.pb svg { display: block; width: 100%; height: auto; max-width: 52px; margin: 0 auto; }
+.pb:hover { transform: scale(1.1); }
+.pb.gone { transform: scale(1.6); opacity: 0; pointer-events: none; animation: none; }
+@keyframes bob {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -6px; }
+}
+.done-msg {
+  margin: 8px 0 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* Sorpresa final */
+.reveal { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+.final {
+  width: 100%;
+  background: var(--card);
+  border: 1px solid rgba(255, 210, 122, 0.45);
+  border-radius: 22px;
+  padding: clamp(26px, 7vw, 44px) clamp(20px, 6vw, 40px);
+  box-shadow: 0 0 60px rgba(255, 93, 143, 0.28), 0 24px 60px rgba(8, 2, 20, 0.5);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  animation: appear 0.9s ease both;
+}
+.final .big {
+  margin: 0;
+  font-family: var(--font-script);
+  font-weight: 700;
+  font-size: clamp(3.2rem, 16vw, 5.6rem);
+  line-height: 1.05;
+  padding: 0 0.1em 0.1em;
+  color: var(--rose);
+  background-image: linear-gradient(100deg, var(--rose), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.final p { margin: 10px auto 0; max-width: 34ch; color: var(--muted); text-wrap: balance; }
+.final .forever { color: var(--gold); font-family: var(--font-display); font-style: italic; font-size: 1.2rem; margin-top: 18px; }
+@keyframes appear {
+  from { opacity: 0; transform: translateY(18px) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .amb, .pb { animation: none; }
+  .amb { bottom: auto; top: 20%; }
+  .final { animation: none; }
+  .btn, .pb { transition: none; }
+}
+</style>
+
+<div class="stars" aria-hidden="true"></div>
+<div class="sky" id="sky" aria-hidden="true"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<main>
+  <header class="hero">
+    <p class="eyebrow">Futura fisioterapeuta</p>
+    <h1 class="hello">Feliz cumpleaños,
+      <span class="name" style="display:block">Mary</span>
+    </h1>
+    <div class="age"><b>28</b><span>años</span></div>
+    <p class="lede">Hoy el cielo se llena de luces y globos solo para ti.</p>
+    <button class="btn" id="launch" type="button">Lanzar cohetes</button>
+  </header>
+
+  <article class="letter">
+    <h2>Mary, mi amor</h2>
+    <p>Hoy cumples 28 años y no hay día en que me sienta más agradecido de tenerte a mi lado. Quise llenarte el cielo de luces, porque eso es lo que tú haces conmigo todos los días.</p>
+    <p>Admiro todo lo que estás construyendo. Estudiar fisioterapia exige horas de esfuerzo, noches de cansancio y mucha paciencia, y aun así sigues con la misma ilusión. Elegiste una carrera para ayudar a otras personas a recuperar su movimiento y su confianza, y eso muestra lo grande que es tu corazón.</p>
+    <p>Tus sueños son enormes y los vas a cumplir. El día que le devuelvas un paso a alguien, voy a estar ahí, orgulloso, aplaudiéndote más fuerte que nadie.</p>
+
+    <h3>Lo que te prometo</h3>
+    <ul class="promises">
+      <li>Apoyarte en cada examen, cada práctica y cada día difícil.</li>
+      <li>Ser tu descanso cuando llegues cansada.</li>
+      <li>Celebrar contigo cada logro, grande o pequeño.</li>
+      <li>Creer en ti incluso cuando tú dudes.</li>
+    </ul>
+
+    <p>Gracias por ser como eres. Feliz cumpleaños, mi vida.</p>
+    <p class="sign">Con todo mi amor</p>
+  </article>
+
+  <section class="game" aria-labelledby="game-title">
+    <h2 id="game-title">28 globos, uno por cada año</h2>
+    <p>Toca cada globo para reventarlo.</p>
+    <div class="count" id="count" aria-live="polite">Quedan 28</div>
+    <div class="field" id="field"></div>
+    <p class="done-msg" id="done" hidden>Los 28 globos explotaron. Ahora el cielo es tuyo.</p>
+  </section>
+
+  <section class="reveal" aria-label="Última sorpresa">
+    <button class="btn gold" id="reveal" type="button">Abre tu última sorpresa</button>
+    <div class="final" id="final" hidden>
+      <p class="big">Te amo, Mary</p>
+      <p>Que este nuevo año de vida te traiga todo lo que sueñas. Yo voy a estar a tu lado para verlo.</p>
+      <p class="forever">Siempre contigo</p>
+    </div>
+  </section>
+</main>
+
+<script>
+(function () {
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var TAU = Math.PI * 2;
+  var BALLOON_COLORS = ['#ff5d8f', '#ff8a6b', '#ffd27a', '#b79cff', '#ff7ac6', '#7fd6ff'];
+  var HUES = [338, 350, 18, 45, 265, 300];
+
+  function balloonSVG() {
+    return '<svg viewBox="0 0 60 100" aria-hidden="true">' +
+      '<ellipse cx="30" cy="30" rx="24" ry="28" fill="currentColor"/>' +
+      '<path d="M30 57 l-5 8 h10 z" fill="currentColor"/>' +
+      '<path d="M30 65 q-7 10 0 18 q7 8 0 15" stroke="rgba(255,244,248,.6)" stroke-width="1.6" fill="none"/>' +
+      '<ellipse cx="21" cy="19" rx="5.5" ry="9" fill="rgba(255,255,255,.38)" transform="rotate(-25 21 19)"/>' +
+      '</svg>';
+  }
+
+  /* Globos decorativos que suben */
+  var sky = document.getElementById('sky');
+  for (var i = 0; i < 9; i++) {
+    var a = document.createElement('div');
+    a.className = 'amb';
+    var w = 46 + Math.random() * 38;
+    a.style.width = w + 'px';
+    a.style.left = (4 + Math.random() * 88) + '%';
+    a.style.color = BALLOON_COLORS[i % BALLOON_COLORS.length];
+    a.style.setProperty('--dx', (Math.random() * 80 - 40) + 'px');
+    a.style.animationDuration = (15 + Math.random() * 14) + 's';
+    a.style.animationDelay = '-' + (Math.random() * 20) + 's';
+    a.innerHTML = balloonSVG();
+    sky.appendChild(a);
+  }
+
+  /* Fuegos artificiales */
+  var cv = document.getElementById('fx');
+  var ctx = cv.getContext('2d');
+  var W = 0, H = 0;
+  function resize() {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth;
+    H = window.innerHeight;
+    cv.width = Math.round(W * dpr);
+    cv.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  var rockets = [];
+  var parts = [];
+
+  function rnd(min, max) { return min + Math.random() * (max - min); }
+
+  function launch(x, ty, heart) {
+    var d = Math.max(H - ty, 40);
+    var g = 0.09;
+    rockets.push({
+      x: x, y: H + 4,
+      vx: rnd(-0.4, 0.4),
+      vy: -Math.sqrt(2 * g * d),
+      g: g,
+      ty: ty,
+      hue: HUES[Math.floor(Math.random() * HUES.length)],
+      heart: !!heart,
+      trail: []
+    });
+  }
+
+  function spawn(x, y, vx, vy, hue, size, decay) {
+    parts.push({
+      x: x, y: y, vx: vx, vy: vy,
+      life: 1,
+      decay: decay,
+      size: size,
+      color: 'hsl(' + (hue + rnd(-14, 14)) + ',100%,' + rnd(62, 78) + '%)'
+    });
+  }
+
+  function explode(x, y, hue, heart) {
+    var i, n;
+    if (heart) {
+      n = 46;
+      for (i = 0; i < n; i++) {
+        var t = (i / n) * TAU;
+        var px = 16 * Math.pow(Math.sin(t), 3);
+        var py = -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
+        spawn(x, y, px * 0.2, py * 0.2, hue, 1.9, rnd(0.008, 0.012));
+        spawn(x, y, px * 0.12, py * 0.12, hue + 20, 1.6, rnd(0.008, 0.012));
+      }
+    } else {
+      n = 80;
+      for (i = 0; i < n; i++) {
+        var ang = Math.random() * TAU;
+        var s = rnd(0.6, 4.8);
+        spawn(x, y, Math.cos(ang) * s, Math.sin(ang) * s, hue, rnd(1.2, 2.2), rnd(0.009, 0.016));
+      }
+    }
+  }
+
+  function pop(x, y, color) {
+    for (var i = 0; i < 18; i++) {
+      var ang = Math.random() * TAU;
+      var s = rnd(0.8, 3.4);
+      parts.push({
+        x: x, y: y,
+        vx: Math.cos(ang) * s, vy: Math.sin(ang) * s - 0.6,
+        life: 1, decay: rnd(0.014, 0.024), size: rnd(1.6, 3),
+        color: color
+      });
+    }
+  }
+
+  function frame() {
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.fillStyle = 'rgba(0,0,0,0.25)';
+    ctx.fillRect(0, 0, W, H);
+    ctx.globalCompositeOperation = 'lighter';
+
+    var i, r, p;
+    for (i = rockets.length - 1; i >= 0; i--) {
+      r = rockets[i];
+      r.trail.push(r.x, r.y);
+      if (r.trail.length > 12) r.trail.splice(0, 2);
+      r.x += r.vx; r.y += r.vy; r.vy += r.g;
+      ctx.strokeStyle = 'hsla(' + r.hue + ',100%,80%,0.8)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(r.trail[0], r.trail[1]);
+      for (var k = 2; k < r.trail.length; k += 2) ctx.lineTo(r.trail[k], r.trail[k + 1]);
+      ctx.lineTo(r.x, r.y);
+      ctx.stroke();
+      if (r.vy >= -0.4 || r.y <= r.ty) {
+        explode(r.x, r.y, r.hue, r.heart);
+        rockets.splice(i, 1);
+      }
+    }
+    for (i = parts.length - 1; i >= 0; i--) {
+      p = parts[i];
+      p.vx *= 0.985; p.vy = p.vy * 0.985 + 0.045;
+      p.x += p.vx; p.y += p.vy;
+      p.life -= p.decay;
+      if (p.life <= 0) { parts.splice(i, 1); continue; }
+      ctx.globalAlpha = Math.max(p.life, 0);
+      ctx.fillStyle = p.color;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.size, 0, TAU);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+
+  function auto() {
+    launch(W * rnd(0.15, 0.85), H * rnd(0.1, 0.4), Math.random() < 0.25);
+  }
+  function finale() {
+    for (var i = 0; i < 9; i++) {
+      (function (n) { setTimeout(auto, n * 230); })(i);
+    }
+    setTimeout(function () { launch(W * 0.5, H * 0.28, true); }, 2300);
+    setTimeout(function () { launch(W * 0.25, H * 0.35, true); launch(W * 0.75, H * 0.35, true); }, 2700);
+  }
+
+  setTimeout(auto, 350);
+  setTimeout(function () { launch(W * 0.5, H * 0.3, true); }, 1000);
+  if (!reduce) {
+    setInterval(function () { if (!document.hidden) auto(); }, 2200);
+  }
+
+  document.addEventListener('pointerdown', function (e) {
+    if (e.target.closest && e.target.closest('button, a')) return;
+    launch(e.clientX, Math.min(e.clientY, H * 0.7), Math.random() < 0.2);
+  });
+  document.getElementById('launch').addEventListener('click', function () {
+    auto(); setTimeout(auto, 200); setTimeout(function () { launch(W * 0.5, H * 0.3, true); }, 450);
+  });
+
+  /* 28 globos para reventar */
+  var field = document.getElementById('field');
+  var countEl = document.getElementById('count');
+  var doneEl = document.getElementById('done');
+  var left = 28;
+  for (var b = 0; b < 28; b++) {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'pb';
+    btn.setAttribute('aria-label', 'Reventar globo');
+    btn.style.color = BALLOON_COLORS[b % BALLOON_COLORS.length];
+    btn.style.animationDelay = '-' + (Math.random() * 3) + 's';
+    btn.innerHTML = balloonSVG();
+    btn.addEventListener('click', onPop);
+    field.appendChild(btn);
+  }
+  function onPop(e) {
+    var el = e.currentTarget;
+    if (el.classList.contains('gone')) return;
+    var rect = el.getBoundingClientRect();
+    pop(rect.left + rect.width / 2, rect.top + rect.height * 0.3, el.style.color);
+    el.classList.add('gone');
+    el.disabled = true;
+    left -= 1;
+    countEl.textContent = left > 0 ? (left === 1 ? 'Queda 1' : 'Quedan ' + left) : 'Todos reventados';
+    if (left === 0) {
+      doneEl.hidden = false;
+      finale();
+    }
+  }
+
+  /* Última sorpresa */
+  var revealBtn = document.getElementById('reveal');
+  var finalEl = document.getElementById('final');
+  revealBtn.addEventListener('click', function () {
+    revealBtn.hidden = true;
+    finalEl.hidden = false;
+    finale();
+    try {
+      finalEl.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+    } catch (err) { /* sin scroll suave */ }
+  });
+})();
+</script>
+
+</body></html>
